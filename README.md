@@ -18,6 +18,10 @@ WhatsNew
 ### Showcase
 
 <p float="left">
-  <video src="showcase/DemoVideo.MOV" width="270" controls preload></video>
-  <video src="showcase/DemoVideo2.MOV" width="270" controls preload></video>
+  <video src="showcase/Screenshot.png" width="270" controls preload></video>
+  <video src="showcase/Screenshot2.png" width="270" controls preload></video>
+</p>
+<p float="left">
+  <video src="showcase/DemoVideo.gif" width="270" controls preload></video>
+  <video src="showcase/DemoVideo2.gif" width="270" controls preload></video>
 </p>

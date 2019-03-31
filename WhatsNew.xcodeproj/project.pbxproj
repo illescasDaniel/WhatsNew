@@ -12,6 +12,12 @@
 		6524538A224F9898005126B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65245388224F9898005126B2 /* Main.storyboard */; };
 		6524538C224F9899005126B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6524538B224F9899005126B2 /* Assets.xcassets */; };
 		6524538F224F9899005126B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6524538D224F9899005126B2 /* LaunchScreen.storyboard */; };
+		6524539B224F98D3005126B2 /* WhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65245399224F98D3005126B2 /* WhatsNewViewController.swift */; };
+		6524539C224F98D3005126B2 /* WhatsNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6524539A224F98D3005126B2 /* WhatsNewViewController.xib */; };
+		652453A5224F9E89005126B2 /* NewFeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652453A3224F9E89005126B2 /* NewFeatureTableViewCell.swift */; };
+		652453A6224F9E89005126B2 /* NewFeatureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 652453A4224F9E89005126B2 /* NewFeatureTableViewCell.xib */; };
+		652453AA224F9F9C005126B2 /* NewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652453A9224F9F9C005126B2 /* NewFeature.swift */; };
+		652453AD224FB315005126B2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652453AC224FB315005126B2 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		6524538B224F9899005126B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6524538E224F9899005126B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65245390224F9899005126B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65245399224F98D3005126B2 /* WhatsNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewViewController.swift; sourceTree = "<group>"; };
+		6524539A224F98D3005126B2 /* WhatsNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhatsNewViewController.xib; sourceTree = "<group>"; };
+		652453A3224F9E89005126B2 /* NewFeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureTableViewCell.swift; sourceTree = "<group>"; };
+		652453A4224F9E89005126B2 /* NewFeatureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFeatureTableViewCell.xib; sourceTree = "<group>"; };
+		652453A9224F9F9C005126B2 /* NewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeature.swift; sourceTree = "<group>"; };
+		652453AC224FB315005126B2 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,76 @@
 		65245383224F9898005126B2 /* WhatsNew */ = {
 			isa = PBXGroup;
 			children = (
+				65245397224F98B6005126B2 /* Components */,
 				65245384224F9898005126B2 /* AppDelegate.swift */,
-				65245386224F9898005126B2 /* ViewController.swift */,
+				65245396224F98A7005126B2 /* ViewControllers */,
 				65245388224F9898005126B2 /* Main.storyboard */,
 				6524538B224F9899005126B2 /* Assets.xcassets */,
 				6524538D224F9899005126B2 /* LaunchScreen.storyboard */,
 				65245390224F9899005126B2 /* Info.plist */,
 			);
 			path = WhatsNew;
+			sourceTree = "<group>";
+		};
+		65245396224F98A7005126B2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				65245386224F9898005126B2 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		65245397224F98B6005126B2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				65245398224F98BF005126B2 /* WhatsNew */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		65245398224F98BF005126B2 /* WhatsNew */ = {
+			isa = PBXGroup;
+			children = (
+				652453A8224F9F91005126B2 /* Model */,
+				652453A7224F9F88005126B2 /* View */,
+			);
+			path = WhatsNew;
+			sourceTree = "<group>";
+		};
+		652453A2224F9E7B005126B2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				652453A3224F9E89005126B2 /* NewFeatureTableViewCell.swift */,
+				652453A4224F9E89005126B2 /* NewFeatureTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		652453A7224F9F88005126B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				652453AB224FB2FF005126B2 /* Button */,
+				652453A2224F9E7B005126B2 /* Cell */,
+				65245399224F98D3005126B2 /* WhatsNewViewController.swift */,
+				6524539A224F98D3005126B2 /* WhatsNewViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		652453A8224F9F91005126B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				652453A9224F9F9C005126B2 /* NewFeature.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		652453AB224FB2FF005126B2 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				652453AC224FB315005126B2 /* RoundedButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +199,8 @@
 				6524538F224F9899005126B2 /* LaunchScreen.storyboard in Resources */,
 				6524538C224F9899005126B2 /* Assets.xcassets in Resources */,
 				6524538A224F9898005126B2 /* Main.storyboard in Resources */,
+				6524539C224F98D3005126B2 /* WhatsNewViewController.xib in Resources */,
+				652453A6224F9E89005126B2 /* NewFeatureTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +212,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				65245387224F9898005126B2 /* ViewController.swift in Sources */,
+				652453AD224FB315005126B2 /* RoundedButton.swift in Sources */,
+				652453A5224F9E89005126B2 /* NewFeatureTableViewCell.swift in Sources */,
+				652453AA224F9F9C005126B2 /* NewFeature.swift in Sources */,
+				6524539B224F98D3005126B2 /* WhatsNewViewController.swift in Sources */,
 				65245385224F9898005126B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

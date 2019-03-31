@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		self.newFeaturesPopup()
 		return true
 	}
 
@@ -41,6 +41,68 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 
-
+	// MARK: - Convenience
+	
+	private func newFeaturesPopup() {
+		
+		//guard WhatsNewViewController.shouldPresentIfNewVersion else { return }
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+			
+			let whatsNewViewController = WhatsNewViewController(nibName: "WhatsNewViewController", bundle: nil)
+			
+			let attributedTitle = NSMutableAttributedString()
+			attributedTitle.append(.init(string: "What's New in ", attributes: WhatsNewViewController.titleAttributes))
+			attributedTitle.append(.init(string: "Questions", attributes: [
+				.font: WhatsNewViewController.titleAttributes[.font]!,
+				.foregroundColor: UIColor.purple
+			]))
+			
+			whatsNewViewController.parameters.attributedTitle = attributedTitle
+			// or: whatsNewViewController.parameters.title = "What's new"
+			//whatsNewViewController.parameters.subtitle = "We hope you enjoy these\nawesome new features"
+			//whatsNewViewController.parameters.dark = true
+			
+			whatsNewViewController.parameters.newFeatures = [
+				.init(image: UIImage(named: "Ghost")!,
+					  title: "New cool feature this and that !!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
+				.init(image: UIImage(named: "Ghost")!,
+					  title: "New cool feature 2!!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
+				.init(image: UIImage(named: "Ghost")!,
+					  title: "New cool feature 2!!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
+				.init(image: UIImage(named: "Ghost")!,
+					  title: "New cool feature 2!!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
+				.init(image: UIImage(named: "Ghost")!,
+					  title: "New cool feature 2!!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
+				.init(image: UIImage(named: "Ghost")!,
+					  title: "New cool feature 2!!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
+				.init(image: UIImage(named: "Ghost")!,
+					  title: "New cool feature 2!!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla")
+			]
+			
+			whatsNewViewController.tintColor = .purple
+			whatsNewViewController.delegate = self
+			whatsNewViewController.popoverIfFewElements(sourceView: self.window?.rootViewController?.view, delegate: self)
+			
+			self.window?.rootViewController?.present(whatsNewViewController, animated: true)
+		}
+	}
 }
 
+extension AppDelegate: WhatsNewViewControllerDelegate {
+	func didSelect(newFeature: NewFeature, withIndex index: Int) {
+		print(newFeature.title)
+	}
+}
+extension AppDelegate: UIPopoverPresentationControllerDelegate {
+	func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+		return .none
+	}
+}

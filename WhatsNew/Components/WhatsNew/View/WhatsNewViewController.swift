@@ -212,9 +212,8 @@ extension WhatsNewViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.imageView?.image = newFeature.image
 		cell.imageView?.tintColor = self.view.tintColor
 		cell.textLabel?.text = newFeature.title
-		if let textLabelPointSize = cell.textLabel?.font.pointSize {
-			cell.textLabel?.font = cell.textLabel?.font.withSize(textLabelPointSize + 1)
-		}
+		let headLineFont = UIFont.preferredFont(forTextStyle: .headline)
+		cell.textLabel?.font = headLineFont.withSize(headLineFont.pointSize + 1)
 		cell.detailTextLabel?.text = newFeature.subtitle
 		
 		if self.parameters.dark {

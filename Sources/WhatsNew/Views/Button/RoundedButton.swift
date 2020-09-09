@@ -14,14 +14,14 @@ import struct CoreGraphics.CGSize
 import class QuartzCore.CAShapeLayer
 
 @IBDesignable
-class RoundedButton: UIButton {
+public class RoundedButton: UIButton {
 	
 	@IBInspectable
 	private var cornerRadius: CGFloat = 10
 	
-	var corners: UIRectCorner = .allCorners
+	public var corners: UIRectCorner = .allCorners
 	
-	override func layoutSubviews() {
+	public override func layoutSubviews() {
 		super.layoutSubviews()
 		
 		let bezierPath = UIBezierPath(

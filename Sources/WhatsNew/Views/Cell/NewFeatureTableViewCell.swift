@@ -13,24 +13,24 @@ import class UIKit.UIView
 import class UIKit.UITableViewCell
 import class Foundation.NSCoder
 
-class NewFeatureTableViewCell: UITableViewCell {
+public class NewFeatureTableViewCell: UITableViewCell {
 	
 	static let reuseIdentifier = "newFeatureCell"
 	
-	@IBOutlet weak var featureImageView: UIImageView!
+	@IBOutlet public weak var featureImageView: UIImageView!
 	
-	@IBOutlet weak var featureTitleLabel: UILabel!
-	@IBOutlet weak var featureDetailsLabel: UILabel!
+	@IBOutlet public weak var featureTitleLabel: UILabel!
+	@IBOutlet public weak var featureDetailsLabel: UILabel!
 	
-	override var textLabel: UILabel? {
+	public override var textLabel: UILabel? {
 		return self.featureTitleLabel
 	}
 	
-	override var detailTextLabel: UILabel? {
+	public override var detailTextLabel: UILabel? {
 		return self.featureDetailsLabel
 	}
 	
-	override var imageView: UIImageView? {
+	public override var imageView: UIImageView? {
 		return featureImageView
 	}
 	

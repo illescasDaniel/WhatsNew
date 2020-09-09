@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,19 +31,19 @@
                     <rect key="frame" x="20" y="54" width="335" height="714"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvE-Q4-hXd" userLabel="TopView">
-                            <rect key="frame" x="0.0" y="0.0" width="335" height="91"/>
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="84"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ARB-Su-p1c">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="91"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="84"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's New" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1P5-WS-rtQ" userLabel="Title">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="40.666666666666664"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="33.666666666666664"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aC-3W-YHf" userLabel="Subtitle">
-                                            <rect key="frame" x="0.0" y="48.666666666666671" width="335" height="42.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="41.666666666666671" width="335" height="42.333333333333329"/>
                                             <string key="text">Great new features...
 test</string>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -61,10 +62,10 @@ test</string>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QZ-TJ-kpm" userLabel="BodyView">
-                            <rect key="frame" x="0.0" y="101" width="335" height="498"/>
+                            <rect key="frame" x="0.0" y="94" width="335" height="505"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zSw-3n-LgT">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="498"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="505"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>
@@ -86,7 +87,7 @@ test</string>
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="0.0"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atw-5l-r0c" customClass="RoundedButton" customModule="WhatsNew" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atw-5l-r0c" customClass="RoundedButton" customModule="WhatsNew" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                             <color key="backgroundColor" red="0.1215733066" green="0.53316605090000002" blue="0.99836903809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -101,7 +102,7 @@ test</string>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdI-k5-IVa">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdI-k5-IVa">
                                             <rect key="frame" x="0.0" y="55" width="335" height="50"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <state key="normal" title="Learn More"/>
@@ -175,15 +176,25 @@ test</string>
                     </variation>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QiO-vz-Sdk" secondAttribute="trailing" constant="20" id="CU3-4e-2LO"/>
                 <constraint firstItem="QiO-vz-Sdk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="JD9-IS-mib"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QiO-vz-Sdk" secondAttribute="bottom" constant="10" id="R0H-sN-Rfd"/>
                 <constraint firstItem="QiO-vz-Sdk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="x9n-e2-Fx9"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
+    <designables>
+        <designable name="atw-5l-r0c">
+            <size key="intrinsicContentSize" width="69" height="33"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

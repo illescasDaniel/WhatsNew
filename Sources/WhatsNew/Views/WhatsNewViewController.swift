@@ -6,7 +6,32 @@
 //  Copyright © 2019 Daniel Illescas Romero. All rights reserved.
 //
 
-import UIKit
+import class UIKit.UIViewController
+import class UIKit.UIStackView
+import class UIKit.UILabel
+import class UIKit.UITableView
+import class UIKit.UIView
+import class UIKit.UIButton
+import class UIKit.UIColor
+import class UIKit.UIDevice
+import class UIKit.NotificationCenter
+import class UIKit.UIApplication
+import class UIKit.NSLayoutConstraint
+import class UIKit.UINib
+import class UIKit.UIFont
+import class UIKit.UITableViewCell
+import class UIKit.UIPresentationController
+import protocol UIKit.UIPopoverPresentationControllerDelegate
+import protocol UIKit.UITableViewDelegate
+import protocol UIKit.UITableViewDataSource
+import enum UIKit.UIModalPresentationStyle
+import enum UIKit.UIStatusBarStyle
+
+import class Foundation.Bundle
+import class Foundation.UserDefaults
+import struct Foundation.URL
+import struct Foundation.IndexPath
+import var Foundation.kCFBundleVersionKey
 
 public protocol WhatsNewViewControllerDelegate: class {
 	func whatsNewViewControllerDidSelect(_ whatsNewViewController: WhatsNewViewController, newFeature: NewFeature, withIndex index: Int)
@@ -32,7 +57,7 @@ public class WhatsNewViewController: UIViewController {
 	@IBOutlet private weak var continueButton: RoundedButton!
 	@IBOutlet private weak var learnMoreButton: UIButton!
 	
-	public weak var delegate: WhatsNewViewControllerDelegate? = nil
+	weak var delegate: WhatsNewViewControllerDelegate? = nil
 	
 	public struct Parameters {
 		
@@ -88,7 +113,7 @@ public class WhatsNewViewController: UIViewController {
 	}
 	
 	public static func create(with parameters: Parameters) -> WhatsNewViewController {
-		let vc = WhatsNewViewController(nibName: "WhatsNewViewController", bundle: nil)
+		let vc = WhatsNewViewController(nibName: "WhatsNewViewController", bundle: .module)
 		vc.parameters = parameters
 		return vc
 	}
@@ -198,6 +223,9 @@ public class WhatsNewViewController: UIViewController {
 		case .attributed(let attributedTitle):
 			self.titleLabel.attributedText = attributedTitle
 		case .default(let text):
+			if #available(iOS 11.0, *) {
+				self.titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+			}
 			self.titleLabel.text = text
 		}
 		
@@ -261,7 +289,7 @@ public class WhatsNewViewController: UIViewController {
 	}
 
 	private func setupTable() {
-		let newFeaturesTableCell = UINib(nibName: "NewFeatureTableViewCell", bundle: nil)
+		let newFeaturesTableCell = UINib(nibName: "NewFeatureTableViewCell", bundle: .module)
 		self.newFeaturesTableView.register(newFeaturesTableCell, forCellReuseIdentifier: NewFeatureTableViewCell.reuseIdentifier)
 	}
 	

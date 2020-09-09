@@ -6,7 +6,12 @@
 //  Copyright © 2019 Daniel Illescas Romero. All rights reserved.
 //
 
-import UIKit
+import class UIKit.UITableViewCell
+import class UIKit.UIImageView
+import class UIKit.UILabel
+import class UIKit.UIView
+import class UIKit.UITableViewCell
+import class Foundation.NSCoder
 
 class NewFeatureTableViewCell: UITableViewCell {
 	

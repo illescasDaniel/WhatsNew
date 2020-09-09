@@ -45,51 +45,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	private func newFeaturesPopup() {
 		
-		//guard WhatsNewViewController.shouldPresentIfNewVersion else { return }
+		guard WhatsNewViewController.shouldPresentIfNewVersion else { return }
 		
 		DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
 			
-			let whatsNewViewController = WhatsNewViewController(nibName: "WhatsNewViewController", bundle: nil)
-			
 			let attributedTitle = NSMutableAttributedString()
-			attributedTitle.append(.init(string: "What's New in ", attributes: WhatsNewViewController.titleAttributes))
+			attributedTitle.append(.init(string: "What's New in\n", attributes: [.font: UIFont.systemFont(ofSize: 30, weight: .heavy)]))
 			attributedTitle.append(.init(string: "Questions", attributes: [
-				.font: WhatsNewViewController.titleAttributes[.font]!,
-				.foregroundColor: UIColor.purple
+				.font: UIFont.systemFont(ofSize: 30, weight: .heavy),
+				.foregroundColor: UIColor.red
 			]))
 			
-			whatsNewViewController.parameters.attributedTitle = attributedTitle
-			// or: whatsNewViewController.parameters.title = "What's new"
-			//whatsNewViewController.parameters.subtitle = "We hope you enjoy these\nawesome new features"
-			//whatsNewViewController.parameters.dark = true
-			
-			whatsNewViewController.parameters.newFeatures = [
-				.init(image: UIImage(named: "Ghost")!,
-					  title: "New cool feature this and that !!",
+			let newFeatures = [
+				NewFeature(image: UIImage(named: "Ghost")!,
+					  title: "1New cool feature this and that !!",
 					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
-				.init(image: UIImage(named: "Ghost")!,
+				NewFeature(image: UIImage(named: "Ghost")!,
+					  title: "2New cool feature 2!!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
+				NewFeature(image: UIImage(named: "Ghost")!,
+					  title: "3New cool feature 2!!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
+				NewFeature(image: UIImage(named: "Ghost")!,
+					  title: "4New cool feature 2!!",
+					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
+				NewFeature(image: UIImage(named: "Ghost")!,
 					  title: "New cool feature 2!!",
 					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
-				.init(image: UIImage(named: "Ghost")!,
+				NewFeature(image: UIImage(named: "Ghost")!,
 					  title: "New cool feature 2!!",
 					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
-				.init(image: UIImage(named: "Ghost")!,
-					  title: "New cool feature 2!!",
-					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
-				.init(image: UIImage(named: "Ghost")!,
-					  title: "New cool feature 2!!",
-					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
-				.init(image: UIImage(named: "Ghost")!,
-					  title: "New cool feature 2!!",
-					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla"),
-				.init(image: UIImage(named: "Ghost")!,
+				NewFeature(image: UIImage(named: "Ghost")!,
 					  title: "New cool feature 2!!",
 					  subtitle: "blablbla blabablabbl ablblablablbblablbl ablabablabbl ablblablablbla")
 			]
 			
-			whatsNewViewController.tintColor = .purple
+			let label = UILabel()
+			label.text = "test"
+			
+			let whatsNewViewController = WhatsNewViewController.create(with: .init(
+				title: .attributed(attributedTitle),
+				subtitle: .default("Hi!!"),
+				tintColor: .red,
+				newFeatures: newFeatures,
+				learnMoreLink: URL(string: "https://www.google.com")!,
+				extraContentView: label,
+				interfaceStyle: .light,
+				sourceViewForPopoverStyleOnIPhoneIfFewElements: self.window?.rootViewController?.view
+			))
+		
 			whatsNewViewController.delegate = self
-			whatsNewViewController.popoverIfFewElements(sourceView: self.window?.rootViewController?.view, delegate: self)
 			
 			self.window?.rootViewController?.present(whatsNewViewController, animated: true)
 		}
@@ -97,12 +102,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: WhatsNewViewControllerDelegate {
-	func didSelect(newFeature: NewFeature, withIndex index: Int) {
+	
+	func whatsNewViewControllerDidSelect(_ whatsNewViewController: WhatsNewViewController, newFeature: NewFeature, withIndex index: Int) {
 		print(newFeature.title)
 	}
-}
-extension AppDelegate: UIPopoverPresentationControllerDelegate {
-	func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-		return .none
+	
+	func whatsNewViewControllerDidTapContinueButton(_ whatsNewViewController: WhatsNewViewController) {
+		print("hey!")
+	}
+	
+	func whatsNewViewControllerDidTapOpenLinkButton(_ whatsNewViewController: WhatsNewViewController, link: URL) {
+		UIApplication.shared.open(link, options: [:], completionHandler: nil)
 	}
 }
+//extension AppDelegate: UIPopoverPresentationControllerDelegate {
+//	func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+//		return .none
+//	}
+//}

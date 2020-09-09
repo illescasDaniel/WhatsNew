@@ -19,12 +19,14 @@ class RoundedButton: UIButton {
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
-		let bezierPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners,
-									   cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+		let bezierPath = UIBezierPath(
+			roundedRect: self.bounds,
+			byRoundingCorners: corners, 
+			cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)
+		)
 
 		let shapeLayer = CAShapeLayer()
 		shapeLayer.path = bezierPath.cgPath
 		self.layer.mask = shapeLayer
 	}
-	
 }

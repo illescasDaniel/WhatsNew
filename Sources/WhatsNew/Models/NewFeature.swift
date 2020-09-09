@@ -6,7 +6,8 @@
 //  Copyright © 2019 Daniel Illescas Romero. All rights reserved.
 //
 
-import UIKit
+import class UIKit.UIImage
+import class Foundation.NSAttributedString
 
 public struct NewFeature {
 	

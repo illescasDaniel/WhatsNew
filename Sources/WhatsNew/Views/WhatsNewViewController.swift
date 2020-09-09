@@ -19,11 +19,6 @@ public extension WhatsNewViewControllerDelegate {
 	func whatsNewViewControllerDidTapOpenLinkButton(_ whatsNewViewController: WhatsNewViewController, link: URL) {}
 }
 
-public enum LabelText {
-	case attributed(NSAttributedString)
-	case `default`(String)
-}
-
 public class WhatsNewViewController: UIViewController {
 	
 	@IBOutlet private weak var topStackView: UIStackView!

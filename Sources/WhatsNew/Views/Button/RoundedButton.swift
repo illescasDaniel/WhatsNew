@@ -6,7 +6,12 @@
 //  Copyright © 2019 Daniel Illescas Romero. All rights reserved.
 //
 
-import UIKit
+import class UIKit.UIButton
+import struct UIKit.UIRectCorner
+import class UIKit.UIBezierPath
+import struct CoreGraphics.CGFloat
+import struct CoreGraphics.CGSize
+import class QuartzCore.CAShapeLayer
 
 @IBDesignable
 class RoundedButton: UIButton {

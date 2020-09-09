@@ -37,7 +37,7 @@ public class WhatsNewViewController: UIViewController {
 	@IBOutlet private weak var continueButton: RoundedButton!
 	@IBOutlet private weak var learnMoreButton: UIButton!
 	
-	weak var delegate: WhatsNewViewControllerDelegate? = nil
+	public weak var delegate: WhatsNewViewControllerDelegate? = nil
 	
 	public struct Parameters {
 		
